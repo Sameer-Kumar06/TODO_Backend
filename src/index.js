@@ -8,9 +8,13 @@ import { app } from "./app.js";
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
-      console.log(`⚙️   Server is running at port : ${process.env.PORT}`);
+      console.log(
+        "\x1b[32m",
+        `⚙️   Server is running at port : ${process.env.PORT}`,
+        "\x1b[0m"
+      );
     });
   })
   .catch((err) => {
-    console.log("MONGO db connection failed !!! ", err);
+    console.log("\x1b[31m", "MONGO db connection failed !!! ", err, "\x1b[0m");
   });
